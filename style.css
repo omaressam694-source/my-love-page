@@ -177,8 +177,12 @@ text-align:center;
 }
 
 .cards h2{
-color:#ff4f88;
-margin-bottom:40px;
+.cards-intro{
+max-width:700px;
+margin:0 auto 35px;
+font-size:18px;
+line-height:1.8;
+color:#666;
 }
 
 .card{
