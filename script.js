@@ -17,24 +17,26 @@ window.addEventListener('load', () => {
 });
 
 // ============================================
-// 2.  ENVELOPE (HERO)
+// 2.  HERO CARD (فتح المحتوى)
 // ============================================
-const envelope = document.getElementById('envelope');
+const heroCard = document.getElementById('heroCard');
 const mainContent = document.getElementById('mainContent');
 const hero = document.getElementById('hero');
 
-envelope.addEventListener('click', () => {
-    envelope.classList.toggle('open');
-    // بعد فتح الظرف، نعرض المحتوى الرئيسي
+heroCard.addEventListener('click', () => {
+    heroCard.style.transform = 'scale(0.9)';
+    heroCard.style.opacity = '0';
+    
     setTimeout(() => {
         hero.style.display = 'none';
         mainContent.style.display = 'block';
-        // تشغيل الموسيقى تلقائياً
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
         const audio = document.getElementById('bgMusic');
         audio.play().catch(() => {});
-        // تفعيل الأقسام المتداولة
+        
         revealSections();
-    }, 1200);
+    }, 500);
 });
 
 // ============================================
@@ -95,7 +97,7 @@ secretModal.addEventListener('click', (e) => {
 const wishBtn = document.getElementById('wishBtn');
 
 wishBtn.addEventListener('click', function() {
-    const emojis = ['❤️', '💖', '💕', '💗', '✨', '🎉', '🌸', '💫'];
+    const emojis = ['❤️', '💖', '💕', '💗', '✨', '🎉', '🌸', '💫', '⭐'];
     const count = 150;
 
     for (let i = 0; i < count; i++) {
@@ -114,16 +116,15 @@ wishBtn.addEventListener('click', function() {
         setTimeout(() => el.remove(), 6000);
     }
 
-    // تغيير النص مؤقتاً
     wishBtn.textContent = '🎉 Happy Birthday Zina ❤️';
     wishBtn.disabled = true;
     setTimeout(() => {
-        wishBtn.textContent = '✨ Make A Wish';
+        wishBtn.textContent = '✨ Make a Wish';
         wishBtn.disabled = false;
     }, 4000);
 });
 
-// إضافة Keyframes للكونفيتي ديناميكياً
+// إضافة Keyframes للكونفيتي
 const styleSheet = document.createElement('style');
 styleSheet.textContent = `
     @keyframes confettiFall {
@@ -158,7 +159,7 @@ document.getElementById('topBtn').addEventListener('click', () => {
 });
 
 // ============================================
-// 9.  REVEAL ON SCROLL (Intersection Observer)
+// 9.  REVEAL ON SCROLL
 // ============================================
 function revealSections() {
     const sections = document.querySelectorAll('section');
@@ -180,7 +181,7 @@ function revealSections() {
 }
 
 // ============================================
-// 10. BACKGROUND FLOATING HEARTS (هادئ)
+// 10. FLOATING HEARTS (خلفية)
 // ============================================
 function createFloatingHeart() {
     const heart = document.createElement('div');
@@ -189,19 +190,19 @@ function createFloatingHeart() {
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.bottom = '-20px';
     heart.style.fontSize = (14 + Math.random() * 18) + 'px';
-    heart.style.opacity = '0.2';
+    heart.style.opacity = '0.15';
     heart.style.pointerEvents = 'none';
     heart.style.zIndex = '0';
     heart.style.animation = `floatHeart ${12 + Math.random() * 8}s linear forwards`;
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 20000);
 }
-// نضيف keyframe للقلب العائم
+
 const heartStyle = document.createElement('style');
 heartStyle.textContent = `
     @keyframes floatHeart {
         0% { transform: translateY(0) rotate(0deg) scale(0.6); opacity: 0.1; }
-        20% { opacity: 0.25; }
+        20% { opacity: 0.2; }
         100% { transform: translateY(-110vh) rotate(720deg) scale(1.2); opacity: 0; }
     }
 `;
