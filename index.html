@@ -1,431 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ar" dir="rtl">
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday Zina ❤️</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عيد ميلاد زينة ❤️</title>
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!-- ملف الأنماط -->
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<div id="hearts"></div>
-
-<div id="overlay"></div>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-card">
-
-<p class="small">For My Favorite Person ❤️</p>
-
-<h1>Happy Birthday</h1>
-
-<h2>Zina</h2>
-
-<p class="desc">
-
-Every day with you is my favorite day.
-
-Today is all about celebrating you.
-
-</p>
-
-<button id="startBtn">
-
-💌 Open My Gift
-
-</button>
-
-</div>
-
-</section>
-
-<!-- MAIN -->
-
-<main id="main">
-
-<section class="intro">
-
-<h2>
-
-Every Love Story is Beautiful
-
-</h2>
-
-<p>
-
-But Ours Is My Favorite ❤️
-
-</p>
-
-</section>
-
-<section class="countdown">
-
-<h2>
-
-Together Since
-
-</h2>
-
-<h3>
-
-08 March 2024
-
-</h3>
-
-<div class="counter">
-
-<div>
-
-<span id="days">0</span>
-
-<p>Days</p>
-
-</div>
-
-<div>
-
-<span id="hours">0</span>
-
-<p>Hours</p>
-
-</div>
-
-<div>
-
-<span id="minutes">0</span>
-
-<p>Minutes</p>
-
-</div>
-
-<div>
-
-<span id="seconds">0</span>
-
-<p>Seconds</p>
-
-</div>
-
-</div>
-
-</section>
-<!-- Gallery -->
-
-<section class="gallery">
-
-<div class="section-title">
-
-<span>📸 Our Memories</span>
-
-<h2>Every Picture Has A Story</h2>
-
-<p>
-Some memories deserve to live forever ❤️
-</p>
-
-</div>
-
-<div class="gallery-grid">
-
-<img src="images/photo1.jpg" alt="">
-
-<img src="images/photo2.jpg" alt="">
-
-<img src="images/photo3.jpg" alt="">
-
-<img src="images/photo4.jpg" alt="">
-
-<img src="images/photo5.jpg" alt="">
-
-</div>
-
-</section>
-
-<!-- WHY I LOVE YOU -->
-
-<section class="love">
-
-<div class="section-title">
-
-<span>❤️ About You</span>
-
-<h2>ليه بحب زينة؟</h2>
-
-<p>
-
-لأن مفيش حد في الدنيا شبهها...
-
-وكل يوم بيعدي بتأكد إني اخترت أجمل وأحن بنت في الدنيا ❤️
-
-</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">🥹</div>
-
-<h3>حنيتك</h3>
-
-<p>
-
-حنيتك عليا في كل وقت حتى وأنا متعصب.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">😊</div>
-
-<h3>ضحكتك</h3>
-
-<p>
-
-ضحكتك بتغير يومي كله.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">💖</div>
-
-<h3>قلبك</h3>
-
-<p>
-
-أنضف قلب عرفته في حياتي.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">🌸</div>
-
-<h3>روحك</h3>
-
-<p>
-
-وجودك لوحده بيخليني مرتاح.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">🤍</div>
-
-<h3>اهتمامك</h3>
-
-<p>
-
-بتحسسيني إني أهم شخص عندك.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">❤️</div>
-
-<h3>كل حاجة</h3>
-
-<p>
-
-ببساطة...
-
-بحبك عشان انتي زينة ❤️
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Secret Letter -->
-
-<section class="secret">
-
-<div class="secret-card" id="openLetter">
-
-<h2>💌 رسالة ليكي</h2>
-
-<p>
-
-اضغطي هنا ❤️
-
-</p>
-
-</div>
-
-</section>
-
-<div class="modal" id="letterModal">
-
-<div class="modal-content">
-
-<span id="closeModal">&times;</span>
-
-<h2>
-
-🫂 عيد ميلاد شخصي المفضل
-
-</h2>
-
-<p>
-
-النهاردة اليوم عبارة عنك وعن سعادتك بس...
-
-</p>
-
-<p>
-
-زي ما انتي على طول منورة كل حياتي بقلبك وروحك
-
-اللي مشوفتش زيهم قبل كدا.
-
-</p>
-
-<p>
-
-والفرحة اللي ديما معيشاني فيها.
-
-يارب السنادي تكون حلوة ليكي
-
-زي ما انتي على طول حلوة.
-
-</p>
-
-<p>
-
-💋 وشكراً على وجودك هنا معايا ديماً...
-
-بحبك ❤️
-
-</p>
-
-</div>
-
-</div>
-<!-- Make A Wish -->
-
-<section class="wish">
-
-<div class="wish-box">
-
-<h2>🎂 Make A Wish</h2>
-
-<p>
-
-اضغطي الزر ده...
-
-وخلي الأمنية تطلع من قلبك ❤️
-
-</p>
-
-<button id="wishBtn">
-
-✨ Make A Wish
-
-</button>
-
-</div>
-
-</section>
-
-<!-- Final Letter -->
-
-<section class="ending">
-
-<h2>
-
-A Little Message For You ❤️
-
-</h2>
-
-<p>
-
-ولو رجع بيا الزمن ألف مرة...
-
-</p>
-
-<p>
-
-هختارك انتي...
-
-كل مرة...
-
-ومن غير تفكير ❤️
-
-</p>
-
-<h3>
-
-Forever Yours,
-
-<br>
-
-Omar ❤️
-
-</h3>
-
-</section>
-
-<!-- Music -->
-
-<audio id="song">
-
-<source src="music/song.mp3" type="audio/mpeg">
-
-</audio>
-
-<button id="musicBtn">
-
-🎵
-
-</button>
-
-<button id="topBtn">
-
-⬆
-
-</button>
-
-</main>
-
-<script src="script.js"></script>
-
+    <!-- ===== شاشة التحميل ===== -->
+    <div id="loader">
+        <div class="loader-content">
+            <span class="loader-heart">❤️</span>
+            <p id="loaderText">Loading Memories...</p>
+        </div>
+    </div>
+
+    <!-- ===== خلفية متحركة (دوائر / فقاعات) ===== -->
+    <div id="bg-shapes"></div>
+
+    <!-- ===== الحاوية الرئيسية ===== -->
+    <div id="app">
+
+        <!-- ===== الـ HERO : الظرف ===== -->
+        <section id="hero" class="hero">
+            <div class="envelope" id="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                    <span class="envelope-text">To The Most Beautiful Girl</span>
+                    <h1>Zina</h1>
+                    <p class="envelope-sub">❤️ Touch To Open ❤️</p>
+                </div>
+                <div class="envelope-letter" id="letterContent">
+                    <p>🫂 عيد ميلاد شخصي المفضل اللي بيملك كل قلبي ❤️</p>
+                    <p>النهاردة اليوم عبارة عنك وعن سعادتك بس...<br>زي ما انتي على طول منورة كل حياتي بقلبك وروحك<br>اللي مشوفتش زيهم قبل كدا ❤️</p>
+                    <p>والفرحة اللي ديما معيشاني فيها...<br>يارب السنة دي تكون حلوة ليكي زي ما انتي على طول حلوة. 🌹</p>
+                    <p>💋 وشكراً على وجودك هنا معايا ديماً، بحبك.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== المحتوى بعد الفتح ===== -->
+        <main id="mainContent" style="display:none;">
+
+            <!-- قسم الترحيب -->
+            <section class="intro-section">
+                <h2>Every Love Story is Beautiful</h2>
+                <p>لكن حكايتنا هي الأجمل ❤️</p>
+            </section>
+
+            <!-- عداد الوقت -->
+            <section class="countdown-section">
+                <h2>Together Since</h2>
+                <h3>08 March 2024</h3>
+                <div class="counter-grid">
+                    <div><span id="days">0</span><p>يوم</p></div>
+                    <div><span id="hours">0</span><p>ساعة</p></div>
+                    <div><span id="minutes">0</span><p>دقيقة</p></div>
+                    <div><span id="seconds">0</span><p>ثانية</p></div>
+                </div>
+            </section>
+
+            <!-- معرض الصور -->
+            <section class="gallery-section">
+                <div class="section-header">
+                    <span>📸 Our Memories</span>
+                    <h2>كل صورة ليها حكاية</h2>
+                    <p>بعض الذكريات تستحق أن تعيش للأبد ❤️</p>
+                </div>
+                <div class="gallery-grid">
+                    <img src="images/photo1.jpg" alt="صورة 1" />
+                    <img src="images/photo2.jpg" alt="صورة 2" />
+                    <img src="images/photo3.jpg" alt="صورة 3" />
+                    <img src="images/photo4.jpg" alt="صورة 4" />
+                    <img src="images/photo5.jpg" alt="صورة 5" />
+                </div>
+            </section>
+
+            <!-- ليه بحب زينة (كروت) -->
+            <section class="love-section">
+                <div class="section-header">
+                    <span>❤️ About You</span>
+                    <h2>ليه بحب زينة؟</h2>
+                    <p>لأن مفيش حد في الدنيا شبهها... وكل يوم بيعدي بتأكد إني اخترت أجمل وأحن بنت في الدنيا ❤️</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="card"><div class="card-icon">🥹</div><h3>حنيتك</h3><p>حنيتك عليا في كل وقت حتى وأنا متعصب.</p></div>
+                    <div class="card"><div class="card-icon">😊</div><h3>ضحكتك</h3><p>ضحكتك بتغير يومي كله.</p></div>
+                    <div class="card"><div class="card-icon">💖</div><h3>قلبك</h3><p>أنضف قلب عرفته في حياتي.</p></div>
+                    <div class="card"><div class="card-icon">🌸</div><h3>روحك</h3><p>وجودك لوحده بيخليني مرتاح.</p></div>
+                    <div class="card"><div class="card-icon">🤍</div><h3>اهتمامك</h3><p>بتحسسيني إني أهم شخص عندك.</p></div>
+                    <div class="card"><div class="card-icon">❤️</div><h3>كل حاجة</h3><p>ببساطة... بحبك عشان انتي زينة ❤️</p></div>
+                </div>
+            </section>
+
+            <!-- رسالة سرية (Pop-up) -->
+            <section class="secret-section">
+                <div class="secret-box" id="openSecret">
+                    <h2>💌 رسالة ليكي</h2>
+                    <p>اضغطي هنا ❤️</p>
+                </div>
+            </section>
+
+            <!-- Make a Wish -->
+            <section class="wish-section">
+                <div class="wish-box">
+                    <h2>🎂 Make A Wish</h2>
+                    <p>اضغطي الزر وخلي الأمنية تطلع من قلبك ❤️</p>
+                    <button id="wishBtn">✨ Make A Wish</button>
+                </div>
+            </section>
+
+            <!-- الخاتمة -->
+            <section class="ending-section">
+                <h2>A Little Message For You ❤️</h2>
+                <p>ولو رجع بيا الزمن ألف مرة...</p>
+                <p>هختارك انتي... كل مرة... ومن غير تفكير ❤️</p>
+                <h3>Forever Yours,<br>Omar ❤️</h3>
+            </section>
+
+            <!-- الأزرار العائمة -->
+            <button id="musicBtn" class="float-btn"><i class="fas fa-music"></i></button>
+            <button id="topBtn" class="float-btn"><i class="fas fa-arrow-up"></i></button>
+
+            <!-- مشغل الموسيقى -->
+            <audio id="bgMusic" src="music/song.mp3"></audio>
+
+            <!-- المودال الخاص بالرسالة السرية -->
+            <div id="secretModal" class="modal">
+                <div class="modal-content glass">
+                    <span id="closeModal" class="modal-close">&times;</span>
+                    <h2>🫂 عيد ميلاد شخصي المفضل</h2>
+                    <p>النهاردة اليوم عبارة عنك وعن سعادتك بس...</p>
+                    <p>زي ما انتي على طول منورة كل حياتي بقلبك وروحك اللي مشوفتش زيهم قبل كدا.</p>
+                    <p>والفرحة اللي ديما معيشاني فيها. يارب السنادي تكون حلوة ليكي زي ما انتي على طول حلوة.</p>
+                    <p>💋 وشكراً على وجودك هنا معايا ديماً... بحبك ❤️</p>
+                </div>
+            </div>
+
+            <!-- عرض الصورة مكبرة -->
+            <div id="imageModal" class="modal">
+                <span id="closeImage" class="modal-close">&times;</span>
+                <img id="expandedImage" src="" alt="صورة مكبرة" />
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
