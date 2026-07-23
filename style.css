@@ -7,15 +7,13 @@
     box-sizing: border-box;
 }
 :root {
-    --pink-light: #FFF7FA;
+    --pink-light: #FFF5F8;
     --pink-mid: #FFE4EC;
     --pink-main: #FF5F92;
     --pink-soft: #FF9ABA;
     --white: #FFFFFF;
-    --glass-bg: rgba(255, 255, 255, 0.25);
-    --glass-border: rgba(255, 255, 255, 0.4);
-    --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-    --radius: 32px;
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    --radius: 28px;
     --font-display: 'Playfair Display', serif;
     --font-body: 'Poppins', sans-serif;
 }
@@ -84,8 +82,8 @@ body {
     content: '';
     position: absolute;
     border-radius: 50%;
-    filter: blur(70px);
-    opacity: 0.5;
+    filter: blur(80px);
+    opacity: 0.3;
 }
 #bg-shapes::before {
     width: 500px;
@@ -109,7 +107,7 @@ body {
 }
 
 /* ============================================
-   HERO - ENVELOPE
+   HERO - CARD (تصميم البداية الأنيق)
 ============================================ */
 .hero {
     min-height: 100vh;
@@ -119,85 +117,96 @@ body {
     padding: 20px;
     position: relative;
     z-index: 1;
+    background: linear-gradient(145deg, #FFF5F8, #FFE4EC);
 }
-.envelope {
-    position: relative;
-    width: 420px;
-    max-width: 100%;
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 50px 35px 40px;
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 48px;
+    padding: 55px 45px 45px;
+    max-width: 520px;
+    width: 100%;
     text-align: center;
+    box-shadow: 0 40px 80px -20px rgba(255, 95, 146, 0.25), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
     cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s;
-    backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid var(--glass-border);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.5s ease, opacity 0.5s ease;
+    animation: cardFloat 3s ease-in-out infinite alternate;
 }
-.envelope:hover {
-    transform: scale(1.02);
-    box-shadow: 0 30px 60px -15px rgba(255, 95, 146, 0.3);
+
+@keyframes cardFloat {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-15px); }
 }
-.envelope-flap {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 40px solid var(--pink-main);
-    filter: drop-shadow(0 5px 10px rgba(255, 95, 146, 0.2));
-    transition: all 0.6s ease;
+
+.hero-card:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 50px 100px -15px rgba(255, 95, 146, 0.35);
 }
-.envelope.open .envelope-flap {
-    transform: translateX(-50%) rotateX(180deg);
-    border-bottom-color: var(--pink-soft);
-}
-.envelope-text {
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: var(--pink-main);
-    text-transform: uppercase;
-    font-weight: 600;
-}
-.envelope h1 {
+
+.hero-card h1 {
     font-family: var(--font-display);
-    font-size: 60px;
-    margin: 15px 0 8px;
-    background: linear-gradient(135deg, var(--pink-main), #FF3B77);
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    color: #1a1a1a;
+    letter-spacing: -2px;
+}
+
+.hero-card .birthday {
+    font-size: 4.8rem;
+    background: linear-gradient(135deg, #FF5F92, #FF3B77);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 5px 0;
 }
-.envelope-sub {
-    color: #888;
+
+.hero-card .name {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-card .name::after {
+    content: '❤️';
+    font-size: 2rem;
+    position: absolute;
+    right: -50px;
+    top: 10px;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.hero-sub {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #999;
+    letter-spacing: 2px;
     font-weight: 300;
-    letter-spacing: 1px;
     margin-top: 10px;
 }
-.envelope-letter {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), padding 0.4s;
-    background: rgba(255, 247, 250, 0.6);
-    border-radius: 20px;
+
+.hero-heart {
+    display: block;
     margin-top: 20px;
-    text-align: right;
-    padding: 0 15px;
+    font-size: 28px;
+    animation: pulse 1.2s infinite alternate;
 }
-.envelope.open .envelope-letter {
-    max-height: 500px;
-    padding: 25px 15px;
-}
-.envelope-letter p {
-    line-height: 2;
-    color: #444;
-    margin-bottom: 12px;
-}
-.envelope-letter p:last-child {
-    margin-bottom: 0;
+
+@media (max-width: 600px) {
+    .hero-card { padding: 35px 20px 30px; border-radius: 32px; }
+    .hero-card h1 { font-size: 3rem; }
+    .hero-card .birthday { font-size: 3.4rem; }
+    .hero-card .name { font-size: 3.2rem; }
+    .hero-card .name::after { right: -35px; font-size: 1.5rem; top: 5px; }
 }
 
 /* ============================================
@@ -215,22 +224,23 @@ body {
 }
 
 section {
-    padding: 80px 20px;
-    max-width: 1200px;
+    padding: 70px 20px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 .section-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 .section-header span {
     color: var(--pink-main);
     font-weight: 600;
     letter-spacing: 1px;
+    font-size: 14px;
 }
 .section-header h2 {
     font-family: var(--font-display);
-    font-size: 36px;
+    font-size: 34px;
     margin: 12px 0 10px;
 }
 .section-header p {
@@ -239,35 +249,38 @@ section {
     margin: 0 auto;
     line-height: 1.8;
 }
-/* قسم الترحيب */
+
+/* الترحيب */
 .intro-section {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 20px;
 }
 .intro-section h2 {
     font-family: var(--font-display);
-    font-size: 40px;
+    font-size: 38px;
     color: var(--pink-main);
 }
 .intro-section p {
     font-size: 20px;
     color: #666;
     margin-top: 10px;
+    line-height: 1.8;
 }
 
-/* عداد */
+/* العداد */
 .countdown-section {
     text-align: center;
 }
 .countdown-section h2 {
-    font-size: 32px;
+    font-size: 28px;
     color: var(--pink-main);
 }
 .countdown-section h3 {
     font-weight: 400;
     color: #777;
     margin-top: 6px;
+    font-size: 20px;
 }
 .counter-grid {
     display: grid;
@@ -281,23 +294,21 @@ section {
     border-radius: 24px;
     box-shadow: var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
-    backdrop-filter: blur(8px);
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid var(--glass-border);
 }
 .counter-grid > div:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px -12px rgba(255, 95, 146, 0.25);
+    box-shadow: 0 20px 40px -12px rgba(255, 95, 146, 0.15);
 }
 .counter-grid span {
     display: block;
-    font-size: 44px;
+    font-size: 42px;
     font-weight: 700;
     color: var(--pink-main);
 }
 .counter-grid p {
-    color: #777;
+    color: #888;
     margin-top: 6px;
+    font-size: 14px;
 }
 
 /* معرض الصور */
@@ -317,85 +328,19 @@ section {
 }
 .gallery-grid img:hover {
     transform: scale(1.04);
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
-}
-
-/* كروت "ليه بحب زينة" */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-}
-.card {
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--glass-border);
-    border-radius: 28px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
-}
-.card:hover {
-    transform: translateY(-12px);
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 25px 50px -12px rgba(255, 95, 146, 0.25);
-}
-.card-icon {
-    font-size: 44px;
-    margin-bottom: 15px;
-}
-.card h3 {
-    font-weight: 600;
-    color: var(--pink-main);
-    margin-bottom: 10px;
-}
-.card p {
-    color: #555;
-    line-height: 1.7;
-    font-size: 0.95rem;
-}
-
-/* الرسالة السرية (بطاقة سوداء) */
-.secret-box {
-    background: #1a1a1a;
-    color: white;
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 40px 30px;
-    border-radius: 30px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.4s, box-shadow 0.4s;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-}
-.secret-box:hover {
-    transform: scale(1.02) translateY(-6px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
-}
-.secret-box h2 {
-    font-family: var(--font-display);
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-.secret-box p {
-    opacity: 0.8;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.12);
 }
 
 /* Make a Wish */
 .wish-box {
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--glass-border);
+    background: var(--white);
     border-radius: 30px;
-    padding: 50px 30px;
+    padding: 45px 30px;
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
     box-shadow: var(--shadow);
 }
 .wish-box h2 {
-    font-size: 38px;
+    font-size: 34px;
     color: var(--pink-main);
     margin-bottom: 15px;
 }
@@ -414,11 +359,11 @@ section {
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 12px 30px -8px rgba(255, 95, 146, 0.4);
+    box-shadow: 0 12px 30px -8px rgba(255, 95, 146, 0.3);
 }
 #wishBtn:hover {
     transform: scale(1.05) translateY(-4px);
-    box-shadow: 0 20px 40px -8px rgba(255, 95, 146, 0.5);
+    box-shadow: 0 20px 40px -8px rgba(255, 95, 146, 0.4);
 }
 #wishBtn:disabled {
     opacity: 0.6;
@@ -426,14 +371,95 @@ section {
     transform: none;
 }
 
+/* كلمة من قلبي (النص الطويل) */
+.message-card {
+    background: var(--white);
+    border-radius: 28px;
+    padding: 40px 35px;
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin: 0 auto;
+}
+.message-card p {
+    line-height: 2.2;
+    color: #444;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.message-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* كروت "ليه بحب زينة" */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 24px;
+}
+.card {
+    background: var(--white);
+    border-radius: 28px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(255, 95, 146, 0.15);
+}
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.card h3 {
+    font-weight: 600;
+    color: var(--pink-main);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+.card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* الرسالة السرية (البطاقة السوداء) */
+.secret-box {
+    background: #1a1a1a;
+    color: white;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.secret-box:hover {
+    transform: scale(1.02) translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+.secret-box h2 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.secret-box p {
+    opacity: 0.85;
+    line-height: 1.8;
+}
+
 /* الخاتمة */
 .ending-section {
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }
 .ending-section h2 {
     font-family: var(--font-display);
-    font-size: 38px;
+    font-size: 36px;
     color: var(--pink-main);
     margin-bottom: 20px;
 }
@@ -443,7 +469,7 @@ section {
     line-height: 2;
 }
 .ending-section h3 {
-    margin-top: 35px;
+    margin-top: 30px;
     font-family: var(--font-display);
     color: var(--pink-main);
     font-size: 28px;
@@ -468,9 +494,7 @@ section {
     display: flex;
 }
 .modal-content {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
+    background: var(--white);
     border-radius: 32px;
     padding: 40px 35px;
     max-width: 600px;
@@ -528,20 +552,17 @@ section {
 ============================================ */
 .float-btn {
     position: fixed;
-    width: 56px;
-    height: 56px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     background: var(--white);
     border: none;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     font-size: 20px;
     color: var(--pink-main);
     cursor: pointer;
     transition: 0.3s;
     z-index: 500;
-    backdrop-filter: blur(6px);
-    background: rgba(255,255,255,0.7);
-    border: 1px solid var(--glass-border);
 }
 .float-btn:hover {
     transform: scale(1.1);
@@ -555,19 +576,16 @@ section {
    RESPONSIVE
 ============================================ */
 @media (max-width: 768px) {
-    .envelope { padding: 30px 20px; }
-    .envelope h1 { font-size: 44px; }
     .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .counter-grid span { font-size: 34px; }
     .cards-grid { grid-template-columns: 1fr 1fr; }
     .section-header h2 { font-size: 28px; }
     .wish-box { padding: 30px 20px; }
     .modal-content { padding: 28px 18px; }
+    .message-card { padding: 25px 18px; }
 }
 @media (max-width: 480px) {
-    .hero { padding: 10px; }
-    .envelope { padding: 20px 15px; }
-    .envelope h1 { font-size: 36px; }
     .cards-grid { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
-   }
+    .hero { padding: 10px; }
+}
