@@ -88,7 +88,7 @@ secretModal.addEventListener('click', (e) => {
 });
 
 // ============================================
-// 6. MAKE A WISH
+// 6. MAKE A WISH (CONFETTI + HEARTS)
 // ============================================
 const wishBtn = document.getElementById('wishBtn');
 wishBtn.addEventListener('click', function() {
