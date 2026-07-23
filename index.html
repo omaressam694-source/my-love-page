@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>عيد ميلاد زينة ❤️</title>
+
     <!-- الخطوط -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,57 +24,48 @@
         </div>
     </div>
 
-    <!-- ===== خلفية متحركة (دوائر / فقاعات) ===== -->
+    <!-- ===== خلفية متحركة ===== -->
     <div id="bg-shapes"></div>
 
     <!-- ===== الحاوية الرئيسية ===== -->
     <div id="app">
 
-        <!-- ===== الـ HERO : الظرف ===== -->
+        <!-- ===== كارت البداية (Hero) ===== -->
         <section id="hero" class="hero">
-            <div class="envelope" id="envelope">
-                <div class="envelope-flap"></div>
-                <div class="envelope-body">
-                    <span class="envelope-text">To The Most Beautiful Girl</span>
-                    <h1>Zina</h1>
-                    <p class="envelope-sub">❤️ Touch To Open ❤️</p>
-                </div>
-                <div class="envelope-letter" id="letterContent">
-                    <p>🫂 عيد ميلاد شخصي المفضل اللي بيملك كل قلبي ❤️</p>
-                    <p>النهاردة اليوم عبارة عنك وعن سعادتك بس...<br>زي ما انتي على طول منورة كل حياتي بقلبك وروحك<br>اللي مشوفتش زيهم قبل كدا ❤️</p>
-                    <p>والفرحة اللي ديما معيشاني فيها...<br>يارب السنة دي تكون حلوة ليكي زي ما انتي على طول حلوة. 🌹</p>
-                    <p>💋 وشكراً على وجودك هنا معايا ديماً، بحبك.</p>
-                </div>
+            <div class="hero-card" id="heroCard">
+                <h1>Happy</h1>
+                <h1 class="birthday">Birthday</h1>
+                <h1 class="name">Zina</h1>
+                <p class="hero-sub">✨ Touch to open your gift ✨</p>
+                <span class="hero-heart">❤️</span>
             </div>
         </section>
 
-        <!-- ===== المحتوى بعد الفتح ===== -->
+        <!-- ===== المحتوى الرئيسي ===== -->
         <main id="mainContent" style="display:none;">
 
-            <!-- قسم الترحيب -->
+            <!-- قسم الترحيب + العداد -->
             <section class="intro-section">
-                <h2>Every Love Story is Beautiful</h2>
-                <p>لكن حكايتنا هي الأجمل ❤️</p>
+                <h2>Happy Birthday Zina ❤️</h2>
+                <p>كل سنة وانتي أجمل حاجة في حياتي<br />يا نور عيني ❤️</p>
             </section>
 
-            <!-- عداد الوقت -->
             <section class="countdown-section">
-                <h2>Together Since</h2>
+                <h2>Together Since ❤️</h2>
                 <h3>08 March 2024</h3>
                 <div class="counter-grid">
-                    <div><span id="days">0</span><p>يوم</p></div>
-                    <div><span id="hours">0</span><p>ساعة</p></div>
-                    <div><span id="minutes">0</span><p>دقيقة</p></div>
-                    <div><span id="seconds">0</span><p>ثانية</p></div>
+                    <div><span id="days">0</span><p>Days</p></div>
+                    <div><span id="hours">0</span><p>Hours</p></div>
+                    <div><span id="minutes">0</span><p>Minutes</p></div>
+                    <div><span id="seconds">0</span><p>Seconds</p></div>
                 </div>
             </section>
 
             <!-- معرض الصور -->
             <section class="gallery-section">
                 <div class="section-header">
-                    <span>📸 Our Memories</span>
+                    <span>📸 Our Beautiful Memories</span>
                     <h2>كل صورة ليها حكاية</h2>
-                    <p>بعض الذكريات تستحق أن تعيش للأبد ❤️</p>
                 </div>
                 <div class="gallery-grid">
                     <img src="images/photo1.jpg" alt="صورة 1" />
@@ -81,6 +73,35 @@
                     <img src="images/photo3.jpg" alt="صورة 3" />
                     <img src="images/photo4.jpg" alt="صورة 4" />
                     <img src="images/photo5.jpg" alt="صورة 5" />
+                </div>
+            </section>
+
+            <!-- Make a Wish -->
+            <section class="wish-section">
+                <div class="wish-box">
+                    <h2>🎂 Make a Wish ❤️</h2>
+                    <p>دوسي هنا وهتشوفي حاجة حلوة ❤️</p>
+                    <button id="wishBtn">✨ Make a Wish</button>
+                </div>
+            </section>
+
+            <!-- كلمة من قلبي -->
+            <section class="message-section">
+                <div class="section-header">
+                    <span>💬 كلمة من قلبي</span>
+                    <h2>❤️</h2>
+                </div>
+                <div class="message-card">
+                    <p>عبد مالك شخصي المفضل التي يملك كل قلبي ❤️</p>
+                    <p>النهاردة اليوم عبارة عن عيدك، والفرحة التي ديما معيشتي فيها.</p>
+                    <p>وكل يوم بيعدي بتأكد إني اختارت أجمل وأحن بنت في الدنيا ❤️</p>
+                    <p>بحبك عليك في كل وقت حتى وانا متعصب ❤️</p>
+                    <p>ضحكتك اللي بتغير يومي كله أول ما بسمعها.</p>
+                    <p>قلبك وروحك اللي مشوفتش زيهم في الدنيا كلها ❤️</p>
+                    <p>إنك دايماً بتشجعيني وبتخليني أحسن نسخة من نفسي.</p>
+                    <p>إنك بتحولي أي يوم عادي لأحلى يوم بمجرد وجودك ❤️</p>
+                    <p>دافعك واهتمامك اللي مخلياني أحس إني أغنى واحد في الدنيا.</p>
+                    <p>لأنك ببساطة... بيتي، وراحتي، وأكثر شخص بحبه ❤️</p>
                 </div>
             </section>
 
@@ -101,29 +122,22 @@
                 </div>
             </section>
 
-            <!-- رسالة سرية (Pop-up) -->
+            <!-- رسالة سرية -->
             <section class="secret-section">
                 <div class="secret-box" id="openSecret">
-                    <h2>💌 رسالة ليكي</h2>
-                    <p>اضغطي هنا ❤️</p>
+                    <h2>💌 رسالة سرية ليكي ❤️</h2>
+                    <p>في رسالة خاصة ليكي ❤️<br />مكتوبة من قلبي ❤️</p>
+                    <p style="font-size:14px; margin-top:10px; opacity:0.7;">👆 اضغطي هنا</p>
                 </div>
             </section>
 
-            <!-- Make a Wish -->
-            <section class="wish-section">
-                <div class="wish-box">
-                    <h2>🎂 Make A Wish</h2>
-                    <p>اضغطي الزر وخلي الأمنية تطلع من قلبك ❤️</p>
-                    <button id="wishBtn">✨ Make A Wish</button>
-                </div>
-            </section>
-
-            <!-- الخاتمة -->
+            <!-- حاجة أخيرة (الخاتمة) -->
             <section class="ending-section">
-                <h2>A Little Message For You ❤️</h2>
-                <p>ولو رجع بيا الزمن ألف مرة...</p>
-                <p>هختارك انتي... كل مرة... ومن غير تفكير ❤️</p>
-                <h3>Forever Yours,<br>Omar ❤️</h3>
+                <h2>حاجة أخيرة ❤️</h2>
+                <p>لو رجع بي الزمن ألف مرة...</p>
+                <p>هختارك انتي كل مرة ❤️</p>
+                <h3>Forever Yours,<br />Omar ❤️</h3>
+                <p style="margin-top:20px; font-size:14px; color:#aaa;">Made with Love by Omar ❤️</p>
             </section>
 
             <!-- الأزرار العائمة -->
@@ -133,9 +147,9 @@
             <!-- مشغل الموسيقى -->
             <audio id="bgMusic" src="music/song.mp3"></audio>
 
-            <!-- المودال الخاص بالرسالة السرية -->
+            <!-- مودال الرسالة السرية -->
             <div id="secretModal" class="modal">
-                <div class="modal-content glass">
+                <div class="modal-content">
                     <span id="closeModal" class="modal-close">&times;</span>
                     <h2>🫂 عيد ميلاد شخصي المفضل</h2>
                     <p>النهاردة اليوم عبارة عنك وعن سعادتك بس...</p>
@@ -145,7 +159,7 @@
                 </div>
             </div>
 
-            <!-- عرض الصورة مكبرة -->
+            <!-- مودال عرض الصورة مكبرة -->
             <div id="imageModal" class="modal">
                 <span id="closeImage" class="modal-close">&times;</span>
                 <img id="expandedImage" src="" alt="صورة مكبرة" />
