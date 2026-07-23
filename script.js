@@ -1,5 +1,5 @@
 // ============================================
-// 1.  LOADER
+// 1. LOADER
 // ============================================
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
@@ -17,30 +17,26 @@ window.addEventListener('load', () => {
 });
 
 // ============================================
-// 2.  HERO CARD (فتح المحتوى)
+// 2. HERO CARD
 // ============================================
 const heroCard = document.getElementById('heroCard');
 const mainContent = document.getElementById('mainContent');
 const hero = document.getElementById('hero');
 
 heroCard.addEventListener('click', () => {
-    heroCard.style.transform = 'scale(0.9)';
+    heroCard.style.transform = 'scale(0.95)';
     heroCard.style.opacity = '0';
-    
     setTimeout(() => {
         hero.style.display = 'none';
         mainContent.style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        
-        const audio = document.getElementById('bgMusic');
-        audio.play().catch(() => {});
-        
+        document.getElementById('bgMusic').play().catch(() => {});
         revealSections();
-    }, 500);
+    }, 400);
 });
 
 // ============================================
-// 3.  TIMER
+// 3. TIMER
 // ============================================
 const startDate = new Date('2024-03-08T00:00:00');
 function updateTimer() {
@@ -60,7 +56,7 @@ setInterval(updateTimer, 1000);
 updateTimer();
 
 // ============================================
-// 4.  GALLERY FULL-SCREEN
+// 4. GALLERY FULL-SCREEN
 // ============================================
 const galleryImages = document.querySelectorAll('.gallery-grid img');
 const imageModal = document.getElementById('imageModal');
@@ -79,7 +75,7 @@ imageModal.addEventListener('click', (e) => {
 });
 
 // ============================================
-// 5.  SECRET LETTER (POPUP)
+// 5. SECRET LETTER
 // ============================================
 const openSecret = document.getElementById('openSecret');
 const secretModal = document.getElementById('secretModal');
@@ -92,30 +88,23 @@ secretModal.addEventListener('click', (e) => {
 });
 
 // ============================================
-// 6.  MAKE A WISH (CONFETTI + HEARTS)
+// 6. MAKE A WISH
 // ============================================
 const wishBtn = document.getElementById('wishBtn');
-
 wishBtn.addEventListener('click', function() {
-    const emojis = ['❤️', '💖', '💕', '💗', '✨', '🎉', '🌸', '💫', '⭐'];
-    const count = 150;
-
-    for (let i = 0; i < count; i++) {
+    const emojis = ['❤️','💖','💕','💗','✨','🎉','🌸','💫'];
+    for (let i = 0; i < 150; i++) {
         const el = document.createElement('div');
         el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-        el.style.position = 'fixed';
-        el.style.left = Math.random() * 100 + 'vw';
-        el.style.top = '-30px';
-        el.style.fontSize = (18 + Math.random() * 28) + 'px';
-        el.style.pointerEvents = 'none';
-        el.style.zIndex = '9999';
-        el.style.animation = `confettiFall ${3 + Math.random() * 3}s linear forwards`;
-        el.style.transform = `rotate(${Math.random() * 360}deg)`;
+        el.style.cssText = `
+            position: fixed; left: ${Math.random() * 100}vw; top: -30px;
+            font-size: ${18 + Math.random() * 28}px; pointer-events: none;
+            z-index: 9999; transform: rotate(${Math.random() * 360}deg);
+            animation: confettiFall ${3 + Math.random() * 3}s linear forwards;
+        `;
         document.body.appendChild(el);
-
         setTimeout(() => el.remove(), 6000);
     }
-
     wishBtn.textContent = '🎉 Happy Birthday Zina ❤️';
     wishBtn.disabled = true;
     setTimeout(() => {
@@ -123,7 +112,6 @@ wishBtn.addEventListener('click', function() {
         wishBtn.disabled = false;
     }, 4000);
 });
-
 // إضافة Keyframes للكونفيتي
 const styleSheet = document.createElement('style');
 styleSheet.textContent = `
@@ -136,11 +124,10 @@ styleSheet.textContent = `
 document.head.appendChild(styleSheet);
 
 // ============================================
-// 7.  MUSIC TOGGLE
+// 7. MUSIC TOGGLE
 // ============================================
 const musicBtn = document.getElementById('musicBtn');
 const bgMusic = document.getElementById('bgMusic');
-
 musicBtn.addEventListener('click', () => {
     if (bgMusic.paused) {
         bgMusic.play();
@@ -152,14 +139,14 @@ musicBtn.addEventListener('click', () => {
 });
 
 // ============================================
-// 8.  TOP BUTTON
+// 8. TOP BUTTON
 // ============================================
 document.getElementById('topBtn').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // ============================================
-// 9.  REVEAL ON SCROLL
+// 9. REVEAL ON SCROLL
 // ============================================
 function revealSections() {
     const sections = document.querySelectorAll('section');
@@ -171,41 +158,10 @@ function revealSections() {
             }
         });
     }, { threshold: 0.15 });
-
     sections.forEach(sec => {
         sec.style.opacity = '0';
-        sec.style.transform = 'translateY(40px)';
-        sec.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        sec.style.transform = 'translateY(30px)';
+        sec.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
         observer.observe(sec);
     });
 }
-
-// ============================================
-// 10. FLOATING HEARTS (خلفية)
-// ============================================
-function createFloatingHeart() {
-    const heart = document.createElement('div');
-    heart.textContent = ['❤️', '💖', '💕', '💗'][Math.floor(Math.random() * 4)];
-    heart.style.position = 'fixed';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.bottom = '-20px';
-    heart.style.fontSize = (14 + Math.random() * 18) + 'px';
-    heart.style.opacity = '0.15';
-    heart.style.pointerEvents = 'none';
-    heart.style.zIndex = '0';
-    heart.style.animation = `floatHeart ${12 + Math.random() * 8}s linear forwards`;
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 20000);
-}
-
-const heartStyle = document.createElement('style');
-heartStyle.textContent = `
-    @keyframes floatHeart {
-        0% { transform: translateY(0) rotate(0deg) scale(0.6); opacity: 0.1; }
-        20% { opacity: 0.2; }
-        100% { transform: translateY(-110vh) rotate(720deg) scale(1.2); opacity: 0; }
-    }
-`;
-document.head.appendChild(heartStyle);
-
-setInterval(createFloatingHeart, 900);
