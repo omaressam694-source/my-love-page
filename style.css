@@ -184,23 +184,40 @@ section {
     font-size: 14px;
 }
 
-/* ===== معرض الصور ===== */
+/* ===== معرض الصور (عمودي مع كابشن) ===== */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 500px;
+    margin: 0 auto;
 }
-.gallery-grid img {
+.gallery-item {
+    width: 100%;
+    text-align: center;
+}
+.gallery-item img {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 24px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-.gallery-grid img:hover {
-    transform: scale(1.04);
+.gallery-item img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 95, 146, 0.15);
+}
+.caption {
+    margin-top: 12px;
+    font-size: 1.05rem;
+    color: #555;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    line-height: 1.6;
 }
 
 /* ===== كروت "ليه بحب زينة" ===== */
@@ -256,7 +273,7 @@ section {
     margin-bottom: 0;
 }
 
-/* ===== الرسالة السرية (الظرف الجديد الأنيق) ===== */
+/* ===== الرسالة السرية (الظرف الأنيق) ===== */
 .secret-box {
     background: #FFF5F8;
     color: #1a1a1a;
@@ -448,6 +465,7 @@ section {
 }
 @media (max-width: 480px) {
     .cards-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { max-width: 100%; }
+    .gallery-item img { aspect-ratio: 4/3; }
     .message-card { padding: 20px 15px; }
-   }
+          }
