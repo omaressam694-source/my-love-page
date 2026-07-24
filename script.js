@@ -58,7 +58,7 @@ updateTimer();
 // ============================================
 // 4. GALLERY FULL-SCREEN
 // ============================================
-const galleryImages = document.querySelectorAll('.gallery-grid img');
+const galleryImages = document.querySelectorAll('.gallery-item img');
 const imageModal = document.getElementById('imageModal');
 const expandedImg = document.getElementById('expandedImage');
 const closeImage = document.getElementById('closeImage');
@@ -165,3 +165,34 @@ function revealSections() {
         observer.observe(sec);
     });
 }
+
+// ============================================
+// 10. FALLING HEARTS (قلوب بتنزل من فوق)
+// ============================================
+function createFallingHeart() {
+    const heart = document.createElement('div');
+    heart.textContent = ['❤️', '💖', '💕', '💗'][Math.floor(Math.random() * 4)];
+    heart.style.position = 'fixed';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.top = '-30px';
+    heart.style.fontSize = (14 + Math.random() * 20) + 'px';
+    heart.style.opacity = '0.2';
+    heart.style.pointerEvents = 'none';
+    heart.style.zIndex = '0';
+    heart.style.animation = `fallingHeart ${8 + Math.random() * 6}s linear forwards`;
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 15000);
+}
+
+const heartStyle = document.createElement('style');
+heartStyle.textContent = `
+    @keyframes fallingHeart {
+        0% { transform: translateY(0) rotate(0deg) scale(0.7); opacity: 0.15; }
+        20% { opacity: 0.25; }
+        100% { transform: translateY(110vh) rotate(720deg) scale(1.1); opacity: 0; }
+    }
+`;
+document.head.appendChild(heartStyle);
+
+// نضبط الوقت عشان القلوب تنزل بشكل منتظم
+setInterval(createFallingHeart, 600);
